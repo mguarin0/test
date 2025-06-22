@@ -1,0 +1,25 @@
+[build-system]
+requires = [
+    "setuptools>=61.0",
+    "wheel",
+    "pybind11[global]>=2.10",
+    "cmake>=3.18",
+    "ninja",         # Optional, speeds up builds
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vector_add"
+version = "0.1.0"
+description = "A JAX FFI extension with CUDA using pybind11"
+requires-python = ">=3.8"
+
+[tool.setuptools]
+packages = []
+
+[tool.setuptools.extension."vector_add"]
+sources = ["vector_add.cc", "vector_add.cu"]
+language = "c++"
+define = []
+include-dirs = ["<path to xla headers if not system-installed>"]
+extra-compile-args = ["-std=c++17"]
