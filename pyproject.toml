@@ -1,15 +1,15 @@
 [build-system]
 requires = [
-    "setuptools>=61.0",
+    "setuptools>=61",
     "wheel",
     "pybind11[global]>=2.10",
     "cmake>=3.18",
-    "ninja"  # optional
+    "ninja"
 ]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "vector_add"
 version = "0.1.0"
-description = "A JAX FFI + CUDA extension"
+description = "JAX extension with custom CUDA kernel"
 requires-python = ">=3.8"
